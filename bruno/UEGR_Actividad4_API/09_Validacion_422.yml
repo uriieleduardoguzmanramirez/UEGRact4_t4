@@ -1,0 +1,33 @@
+﻿info:
+  name: 09_Validacion_422
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://uegract_t4.test/api/pedidos
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "cliente": "",
+        "producto": "",
+        "cantidad": 0,
+        "total": -100,
+        "estado": "desconocido"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

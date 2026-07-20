@@ -1,0 +1,28 @@
+﻿info:
+  name: 02_Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://uegract_t4.test/api/login
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "email": "uriel@gmail.com",
+        "password": "22161091"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

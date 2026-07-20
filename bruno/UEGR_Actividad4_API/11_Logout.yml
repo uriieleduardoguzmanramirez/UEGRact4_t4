@@ -1,0 +1,21 @@
+﻿info:
+  name: 11_Logout
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: http://uegract_t4.test/api/logout
+  headers:
+    - name: Accept
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

@@ -1,0 +1,33 @@
+﻿info:
+  name: 04_Crear_Pedido
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://uegract_t4.test/api/pedidos
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "cliente": "MarÃ­a LÃ³pez",
+        "producto": "Pastel de chocolate",
+        "cantidad": 2,
+        "total": 750.00,
+        "estado": "pendiente"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

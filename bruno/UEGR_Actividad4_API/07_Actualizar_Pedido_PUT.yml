@@ -1,0 +1,33 @@
+﻿info:
+  name: 07_Actualizar_Pedido_PUT
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: http://uegract_t4.test/api/pedidos/3
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "cliente": "MarÃ­a LÃ³pez",
+        "producto": "Pastel de chocolate",
+        "cantidad": 4,
+        "total": 1500.00,
+        "estado": "entregado"
+      }  
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

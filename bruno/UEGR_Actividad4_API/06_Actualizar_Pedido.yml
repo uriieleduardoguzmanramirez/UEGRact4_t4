@@ -1,0 +1,31 @@
+﻿info:
+  name: 06_Actualizar_Pedido
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: http://uegract_t4.test/api/pedidos/3
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "cantidad": 3,
+        "total": 1125.00,
+        "estado": "preparando"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

@@ -1,0 +1,21 @@
+﻿info:
+  name: 05_Consultar_Pedido
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: http://uegract_t4.test/api/pedidos/3
+  headers:
+    - name: Accept
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+

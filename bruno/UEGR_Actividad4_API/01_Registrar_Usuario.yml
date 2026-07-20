@@ -1,0 +1,30 @@
+﻿info:
+  name: 01_Registrar_Usuario
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: http://uegract_t4.test/api/register
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Usuario Registro",
+        "email": "registro@uegr.test",
+        "password": "Registro123",
+        "password_confirmation": "Registro123"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
