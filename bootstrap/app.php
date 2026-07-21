@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Throwable;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,5 +17,11 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+        $exceptions->shouldRenderJsonWhen(
+            fn (Request $request, Throwable $e) =>
+                $request->is('api/*')
+                || $request->is('UEGRact4_t4/api/*')
+                || $request->expectsJson()
+        );
+    })
+    ->create();
