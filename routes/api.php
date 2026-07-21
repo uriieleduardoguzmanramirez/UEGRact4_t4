@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\Route;
 | Rutas públicas
 |--------------------------------------------------------------------------
 */
+Route::get('/', function () {
+    return response()->json([
+        'mensaje' => 'API REST de pedidos funcionando correctamente.',
+        'proyecto' => 'Actividad 4 - Laravel Sanctum',
+        'autor' => 'Uriel Eduardo Guzmán Ramírez',
+        'endpoints' => [
+            'registro' => 'POST /api/register',
+            'login' => 'POST /api/login',
+            'pedidos' => 'GET /api/pedidos - requiere token',
+        ],
+    ]);
+});
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
