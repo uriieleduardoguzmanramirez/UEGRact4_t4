@@ -1,0 +1,31 @@
+info:
+  name: " 13_Login_VPS"
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: http://82.25.93.110/UEGRact4_t4/api/login
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: ""
+      value: ""
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+        "email": "uriel@gmail.com",
+        "password": "22161091"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

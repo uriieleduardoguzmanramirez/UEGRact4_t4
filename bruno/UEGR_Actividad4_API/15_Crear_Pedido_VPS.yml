@@ -1,0 +1,32 @@
+info:
+  name: 15_Crear_Pedido_VPS
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: http://82.25.93.110/UEGRact4_t4/api/pedidos
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "cliente": "Carlos Martínez",
+        "producto": "Pastel de tres leches",
+        "cantidad": 1,
+        "total": 480.00,
+        "estado": "pendiente"
+      }
+  auth:
+    type: bearer
+    token: "{{token_vps}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
