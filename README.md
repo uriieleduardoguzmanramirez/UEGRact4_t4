@@ -1,58 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ACTIVIDAD 4  
+## API REST CON LARAVEL, SANCTUM Y MYSQL
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Institución:** Instituto Tecnológico de Oaxaca  
+**Carrera:** Ingeniería en Sistemas Computacionales  
+**Materia:** Programación Web  
+**Actividad:** Actividad 4 - Desarrollo de una API REST  
+**Alumno:** Uriel Eduardo Guzmán Ramírez    
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Introducción
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+En esta actividad se desarrolló una API REST desde cero utilizando Laravel. El objetivo principal fue crear un sistema que permitiera registrar usuarios, iniciar sesión y administrar pedidos de una pastelería.
+se utiliza Laravel Sanctum para generar tokens de acceso y proteger las funciones que solamente pueden utilizar los usuarios autenticados.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Las pruebas se realizaron con Bruno, donde se comprobaron el registro, el inicio de sesión, la creación de pedidos, la consulta de información, las actualizaciones, las eliminaciones y las validaciones.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Objetivo
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Desarrollar una API REST funcional con Laravel que permita administrar usuarios y pedidos, utilizando autenticación con Laravel Sanctum, validaciones, respuestas JSON y una base de datos MySQL.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+# Tecnologías utilizadas
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- PHP 8.3
+- Laravel 13
+- MySQL
+- Laravel Sanctum
+- Bruno
+- Nginx
+- Laravel Herd
 
-```bash
-composer require laravel/boost --dev
+---
 
-php artisan boost:install
+# Funciones del proyecto
+
+La API permite realizar las siguientes acciones:
+
+- Registrar nuevos usuarios.
+- Iniciar sesión con correo y contraseña.
+- Generar tokens de acceso.
+- Consultar al usuario autenticado.
+- Cerrar sesión.
+- Crear pedidos.
+- Consultar todos los pedidos.
+- Consultar un pedido por su identificador.
+- Actualizar pedidos con PUT o PATCH.
+- Eliminar pedidos.
+- Validar los datos enviados.
+- Proteger las rutas mediante un token.
+
+---
+
+# Información de los pedidos
+
+Cada pedido contiene los siguientes datos:
+
+- Cliente.
+- Producto.
+- Cantidad.
+- Total.
+- Estado.
+- Fecha de creación.
+- Fecha de actualización.
+
+Los estados permitidos son:
+
+- `pendiente`
+- `preparando`
+- `entregado`
+- `cancelado`
+
+---
+
+# Rutas de la API
+
+## Rutas públicas
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/api` | Muestra información general de la API |
+| POST | `/api/register` | Registra un usuario |
+| POST | `/api/login` | Inicia sesión y genera un token |
+
+## Rutas protegidas
+
+Las siguientes rutas necesitan un token válido:
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/api/user` | Consulta al usuario autenticado |
+| POST | `/api/logout` | Cierra la sesión |
+| GET | `/api/pedidos` | Muestra los pedidos |
+| POST | `/api/pedidos` | Crea un pedido |
+| GET | `/api/pedidos/{id}` | Consulta un pedido |
+| PUT | `/api/pedidos/{id}` | Actualiza completamente un pedido |
+| PATCH | `/api/pedidos/{id}` | Actualiza parcialmente un pedido |
+| DELETE | `/api/pedidos/{id}` | Elimina un pedido |
+
+---
+
+# Autenticación con Laravel Sanctum
+
+Laravel Sanctum se utilizó para generar tokens de acceso.
+
+Cuando un usuario inicia sesión correctamente, la API devuelve una respuesta parecida a la siguiente:
+
+```json
+{
+  "mensaje": "Inicio de sesión correcto.",
+  "token": "TOKEN_GENERADO",
+  "tipo_token": "Bearer"
+}
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+# Conclusión
 
-## Contributing
+En esta actividad se logró desarrollar una API REST funcional utilizando Laravel, MySQL y Laravel Sanctum.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+El sistema permite registrar usuarios, iniciar sesión y administrar pedidos mediante las operaciones de crear, consultar, actualizar y eliminar. También se implementaron validaciones para evitar datos incorrectos y tokens para proteger las rutas privadas.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Las pruebas realizadas con Bruno permitieron comprobar que las funciones trabajan correctamente tanto de manera local como en el VPS.
