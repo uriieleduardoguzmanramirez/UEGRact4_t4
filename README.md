@@ -118,19 +118,19 @@ Cuando un usuario inicia sesión correctamente, la API devuelve una respuesta pa
 
 <img width="1281" height="695" alt="image" src="https://github.com/user-attachments/assets/068f7ccc-9988-48fb-8fa6-e57ed30b393c" />
 
-# despues iniciamos con el login para autentificar que el usuario si puede entrar
+ despues iniciamos con el login para autentificar que el usuario si puede entrar
 <img width="1260" height="683" alt="image" src="https://github.com/user-attachments/assets/e691fcdc-f977-4122-b9ff-b316fda46e89" />
 
-# copio el token y lo pego en el auth para poder estar conectado con el login o ese usuario 
+copio el token y lo pego en el auth para poder estar conectado con el login o ese usuario 
 <img width="1239" height="678" alt="image" src="https://github.com/user-attachments/assets/fe6b8281-da8e-4ecf-862d-9433d31c29c1" />
 
-# se hace lo mismo con usuario se autentifica el token y guardamos como se puede ver se nos muestra la lista que hemos creado
+ se hace lo mismo con usuario se autentifica el token y guardamos como se puede ver se nos muestra la lista que hemos creado
 <img width="1274" height="695" alt="image" src="https://github.com/user-attachments/assets/45deb13f-e422-49c8-a658-329a1269b3ce" />
 
-# si deseamos actualizar conectamos el token nuevamnete y luego hacemos los cambios y guardamos 
+ si deseamos actualizar conectamos el token nuevamnete y luego hacemos los cambios y guardamos 
 <img width="1272" height="663" alt="image" src="https://github.com/user-attachments/assets/178dd360-7837-4f2a-8db0-d32b321a38e8" />
 
-# finalmente cerramos sesion con el usuario autentificado que igual pusimos el token
+ finalmente cerramos sesion con el usuario autentificado que igual pusimos el token
 <img width="1311" height="702" alt="image" src="https://github.com/user-attachments/assets/e8e58ad5-4129-4ba7-93dc-978cc9095d9d" />
 
 
