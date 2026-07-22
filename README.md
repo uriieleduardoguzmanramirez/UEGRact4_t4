@@ -114,7 +114,7 @@ Cuando un usuario inicia sesión correctamente, la API devuelve una respuesta pa
   "tipo_token": "Bearer"
 }
 ```
-# primero entramos a registrar un usuario y se guarda correctamente con el "200 ok"
+primero entramos a registrar un usuario y se guarda correctamente con el "200 ok"
 
 <img width="1281" height="695" alt="image" src="https://github.com/user-attachments/assets/068f7ccc-9988-48fb-8fa6-e57ed30b393c" />
 
